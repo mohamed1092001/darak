@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        aside {
+            width: 300px;
+            height: 100vh;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+        }
+
+        aside div {
+            width: 100%;
+            text-align: center;
+            background-color: #000027;
+            color: #fff;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        aside div:not(.active):hover {
+            background-color: #01014b;
+        }
+
+        /* answer */
+
+        .upper {
+            border-bottom-right-radius: 20px;
+        }
+
+        .lower {
+            border-top-right-radius: 20px;
+        }
+
+        .active {
+            background-color: #fff;
+            color: #000027;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <aside>
+        <div> home </div>
+        <div> home </div>
+        <div> home </div>
+        <div> home </div>
+        <div> home </div>
+        <div> home </div>
+        <div> home </div>
+        <div> home </div>
+    </aside>
+
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+
+        //  answer 
+
+        $("div").click(function () {
+            $("div").removeClass("lower").removeClass("upper").removeClass("active")
+            $(this).addClass("active")
+            $(this).prev().addClass("upper")
+            $(this).next().addClass("lower")
+        })
+    </script>
+</body>
+
+</html>
